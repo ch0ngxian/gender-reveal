@@ -36,7 +36,7 @@ export default function CountDownSection({ gender, revealAt }) {
 
   const Timer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-      return <BlurIn className={"text-8xl font-bold"}>{gender}</BlurIn>;
+      return <BlurIn className={"text-8xl font-bold text-center"}>{gender}</BlurIn>;
     } else {
       return (
         <div className="flex flex-col justify-center items-center">
