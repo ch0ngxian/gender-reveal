@@ -71,7 +71,9 @@ export default function Home() {
       <main className="flex flex-col justify-between items-center py-10">
         <div className="text-xl text-center">{isRevealed ? "It is a" : "Chong Xian & Tan Ye baby's gender revealed in"}</div>
         {MemoCountDownSection}
-        <div>Built by Chong Xian</div>
+        <a href="https://www.chongxian.dev" target="_blank" className="cursor-pointer">
+          Built by Chong Xian
+        </a>
       </main>
       {revealAt && <Countdown className="hidden" date={revealAt.toDate()} renderer={() => {}} onComplete={onReveal} />}
 
