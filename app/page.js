@@ -73,7 +73,8 @@ export default function Home() {
         {MemoCountDownSection}
         <div>Built by Chong Xian</div>
       </main>
-      <Countdown className="hidden" date={Date.now() + 1000} renderer={() => {}} onComplete={onReveal} />
+      {revealAt && <Countdown className="hidden" date={revealAt.toDate()} renderer={() => {}} onComplete={onReveal} />}
+
       <div className="gradient-background">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>

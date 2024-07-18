@@ -53,5 +53,5 @@ export default function CountDownSection({ gender, revealAt }) {
     }
   };
 
-  return <Countdown date={Date.now() + 1000} renderer={Timer} onComplete={startConfetti} />;
+  return <Countdown date={revealAt.toDate()} renderer={Timer} onComplete={startConfetti} />;
 }
