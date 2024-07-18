@@ -41,11 +41,11 @@ export default function CountDownSection({ gender, revealAt }) {
       return (
         <div className="flex flex-col justify-center items-center">
           {days > 0 && (
-            <div className="text-7xl mb-5">
+            <div className="text-6xl sm:7xl mb-5">
               {days} day{days > 1 ? "s" : ""}
             </div>
           )}
-          <div className="text-8xl">
+          <div className="text-7xl sm:8xl">
             {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
           </div>
         </div>
