@@ -3,7 +3,7 @@ import Countdown, { zeroPad } from "react-countdown";
 import confetti from "canvas-confetti";
 import BlurIn from "./BlurIn";
 
-export default function CountDownSection({ gender, releaseAt }) {
+export default function CountDownSection({ gender, revealAt }) {
   const startConfetti = () => {
     const end = Date.now() + 3 * 1000; // 3 seconds
     const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
@@ -45,7 +45,6 @@ export default function CountDownSection({ gender, releaseAt }) {
               {days} day{days > 1 ? "s" : ""}
             </div>
           )}
-
           <div className="text-8xl">
             {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
           </div>

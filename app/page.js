@@ -5,11 +5,10 @@ import CountDownSection from "./components/CountDownSection";
 import db from "@/lib/firestore";
 import { getDoc, doc } from "firebase/firestore";
 import Countdown from "react-countdown";
-import BlurIn from "./components/BlurIn";
 
 export default function Home() {
   const [gender, setGender] = useState();
-  const [releaseAt, setReleaseAt] = useState();
+  const [revealAt, setRevealAt] = useState();
   const [isRevealed, setIsRevealed] = useState(false);
 
   const interationDiv = useRef();
@@ -29,11 +28,11 @@ export default function Home() {
 
   useEffect(() => {
     const getData = async () => {
-      const docRef = await getDoc(doc(db, "data", "8q2x6xFj1vGfKxE6MkMN"));
+      const docRef = await getDoc(doc(db, "data", "chongxiantanye"));
       const data = docRef.data();
 
       setGender(decryptGender(data.gender));
-      setReleaseAt(data.release_at);
+      setRevealAt(data.reveal_at);
     };
 
     getData();
@@ -64,13 +63,13 @@ export default function Home() {
   };
 
   const MemoCountDownSection = useMemo(() => {
-    return gender && releaseAt && <CountDownSection gender={gender} releaseAt={releaseAt} />;
-  }, [gender, releaseAt]);
+    return gender && revealAt && <CountDownSection gender={gender} revealAt={revealAt} />;
+  }, [gender, revealAt]);
 
   return (
     <div onMouseMove={onMouseMove}>
       <main className="flex flex-col justify-between items-center py-10">
-        <div className="text-xl">{isRevealed ? "It is a" : "Chong Xian & Tan Ye baby's gender revealed in"}</div>
+        <div className="text-xl text-center">{isRevealed ? "It is a" : "Chong Xian & Tan Ye baby's gender revealed in"}</div>
         {MemoCountDownSection}
         <div>Built by Chong Xian</div>
       </main>
