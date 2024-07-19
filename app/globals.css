@@ -39,21 +39,63 @@
   --color4: 70, 187, 228;
   --color5: 253, 148, 203;
   --color-interactive: 255, 255, 255;
-  --circle-size: 80%;
+  --circle-size: 150%;
   --blending: hard-light;
 }
 
 main {
   z-index: 100;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   color: white;
-  opacity: 0.8;
   user-select: none;
-  background: url(/images/noise.svg);
+}
+
+main::after {
+  @apply opacity-80;
+  background-image: url(/images/noise.svg);
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+main > div {
+  @apply opacity-90;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --circle-size: 80%;
+  }
+
+  main {
+    z-index: 100;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    background: url(/images/noise.svg);
+  }
+
+  main::after {
+    @apply opacity-0;
+  }
+}
+
+html,
+body {
+  height: 100%;
 }
 
 @keyframes moveInCircle {
@@ -94,7 +136,7 @@ main {
 
 .gradient-background {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: relative;
   overflow: hidden;
   background: white;

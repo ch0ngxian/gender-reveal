@@ -42,7 +42,7 @@ export default function Submit() {
   };
 
   return isSubmitted ? (
-    <div className="w-screen h-screen flex flex-col justify-between items-center p-7 ">
+    <div className="w-screen h-full flex flex-col justify-between items-center p-7 ">
       <div className="h-full flex flex-col justify-center items-center">
         <Image src="/images/checked.svg" width={50} height={50} alt="checked" />
         <div className="mt-10 text-3xl font-medium text-center">{"Reveal time updated!"}</div>
@@ -58,7 +58,7 @@ export default function Submit() {
       </div>
     </div>
   ) : (
-    <div className="w-screen h-screen flex flex-col justify-between items-center p-7 ">
+    <div className="w-screen h-full flex flex-col justify-between items-center p-7 ">
       <div className="text-3xl font-medium">{"Gender Reveal Time"}</div>
       <div className="flex flex-col w-full h-full m-10 gap-5">
         <DateTimePicker disableClock={true} onChange={setSelectedRevealAt} value={selectedRevealAt} />
