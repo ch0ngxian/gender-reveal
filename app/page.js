@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <div onMouseMove={onMouseMove} className="h-full">
       <main className="flex flex-col justify-between items-center py-5 sm:py-10">
-        <div className="text-xl text-center font-medium">{isRevealed ? "It is a" : "Chong Xian & Tan Ye baby's gender revealed in"}</div>
+        <div className="text-xl text-center font-medium">{isRevealed ? "It is a" : "Chong Xian & Tan Ye baby's gender will be revealed in"}</div>
         {MemoCountDownSection}
         <a href="https://www.chongxian.dev" target="_blank" className="cursor-pointer">
           Built by Chong Xian
