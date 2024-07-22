@@ -41,13 +41,26 @@ export default function CountDownSection({ gender, revealAt }) {
       return (
         <div className="flex flex-col justify-center items-center">
           {days > 0 && (
-            <div className="text-6xl sm:7xl mb-5">
+            <div className="text-6xl sm:7xl mb-3">
               {days} day{days > 1 ? "s" : ""}
             </div>
           )}
           <div className="text-7xl sm:8xl">
             {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
           </div>
+          {days > 1 && (
+            <div className="text-lg text-center font-medium mt-5">
+              {revealAt.toDate().toLocaleString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour12: true,
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric",
+              })}
+            </div>
+          )}
         </div>
       );
     }
